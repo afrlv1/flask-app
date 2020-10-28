@@ -9,7 +9,7 @@ class FlaskAppTests(unittest.TestCase):
 
     def test_get(self):
         r = self.app.get('/')
-        self.assertEqual(r.data, 'У меня получилось!')
+        self.assertEqual(r.data.decode('utf-8'), 'У меня получилось!')
 
     def test_post(self):
         r = self.app.post('/')
@@ -18,3 +18,4 @@ class FlaskAppTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
